@@ -19,8 +19,11 @@ const isAdmin = (id) => {
 
 const getEventMessage = ({title, date, description, price, capacity}) => {
   return `${title}
-  ${description}
-  ${price}`
+
+${description}
+
+Леди: ${specialprice}aed
+Джентльмены: ${price}aed`
 }
 
 const getMainInlineKeyboard = () => {
