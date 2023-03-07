@@ -49,12 +49,6 @@ bot.onText(/\/events/, async (msg) => {
   }
 });
 
-bot.on('web_app_data', async (msg) => {
-  console.log('WEBAPP', msg)
-  const { chat, contact = null, text, web_app_data } = msg;
-  const { id: chatId } = chat;
-});
-
 bot.on('message', async (msg) => {
   const { chat, contact = null, text, web_app_data } = msg;
   const { id: chatId } = chat;
@@ -67,14 +61,14 @@ bot.on('message', async (msg) => {
     return bot.sendMessage(chatId, chatId);
   }
   // bot.sendMessage(chatId, JSON.stringify(msg));
-  if(web_app_data?.data) {
-    try {
-        const data = JSON.parse(web_app_data?.data)
-        await bot.sendMessage(chatId, data?.message)
-    } catch (e) {
-      return bot.sendMessage(chatId, 'Ошибка бронирования');
-    }
-  }
+  // if(web_app_data?.data) {
+  //   try {
+  //       const data = JSON.parse(web_app_data?.data)
+  //       await bot.sendMessage(chatId, data?.message)
+  //   } catch (e) {
+  //     return bot.sendMessage(chatId, 'Ошибка бронирования');
+  //   }
+  // }
 });
 
 
@@ -84,8 +78,6 @@ bot.on('callback_query', async (msg) => {
   const { id: chatId } = message.chat;
   const tmp = callBackData.split(':');
   const data = tmp[0];
-
-  console.log('callback_query', msg)
 
   switch (data) {
     case CALLBACK_DATA.showEvent.callback_data:

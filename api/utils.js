@@ -38,7 +38,7 @@ const getEventInlineKeyboard = (id, isAdmin, lat, log) => {
   ]
     if (isAdmin) {
       inline_keyboard.push([{ text: 'Посетители',  web_app: {url: `${process.env.WEB_APP_URL}/visitors/?eventId=${id}`} }]);
-      inline_keyboard.push([{ text: 'Редактировать',  web_app: {url: `${process.env.WEB_APP_URL}/booking/?eventId=${id}`} }]);
+      inline_keyboard.push([{ text: 'Редактировать',  web_app: {url: `${process.env.WEB_APP_URL}/events/`} }]);
   }
   return { inline_keyboard }
 }
