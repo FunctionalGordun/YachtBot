@@ -17,7 +17,7 @@ const isAdmin = (id) => {
   return process.env.ADMINS_ID.includes(id);
 }
 
-const getEventMessage = ({title, date, description, price, capacity}) => {
+const getEventMessage = ({title, date, description, price, specialprice, capacity}) => {
   return `${title}
 
 ${description}
