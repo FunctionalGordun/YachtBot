@@ -22,7 +22,7 @@ const getEventMessage = ({title, date, description, price, specialprice, avaliab
 
 ${description}
 
-Cвободных мест: ${avaliable}
+Доступно: ${avaliable} места
 Леди: ${specialprice}aed
 Джентльмены: ${price}aed`
 }
