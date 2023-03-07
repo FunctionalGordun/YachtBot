@@ -66,7 +66,8 @@ bot.on('message', async (msg) => {
   if (text == 'getId') {
     return bot.sendMessage(chatId, chatId);
   }
-  console.log('web_app_data', web_app_data)
+  console.log('msg', msg)
+  return bot.sendMessage(chatId, 'Ошибка бронирования');
   if(web_app_data?.data) {
     try {
         const data = JSON.parse(web_app_data?.data)
@@ -74,7 +75,7 @@ bot.on('message', async (msg) => {
     } catch (e) {
       return bot.sendMessage(chatId, 'Ошибка бронирования');
     }
-}
+  }
 });
 
 
