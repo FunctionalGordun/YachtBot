@@ -17,11 +17,12 @@ const isAdmin = (id) => {
   return process.env.ADMINS_ID.includes(id);
 }
 
-const getEventMessage = ({title, date, description, price, specialprice, capacity}) => {
+const getEventMessage = ({title, date, description, price, specialprice, avaliable}) => {
   return `${title}
 
 ${description}
 
+Cвободных мест: ${avaliable}
 Леди: ${specialprice}aed
 Джентльмены: ${price}aed`
 }
