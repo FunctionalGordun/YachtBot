@@ -66,7 +66,7 @@ bot.on('message', async (msg) => {
   if (text == 'getId') {
     return bot.sendMessage(chatId, chatId);
   }
-  bot.sendMessage(chatId, JSON.stringify(msg));
+  // bot.sendMessage(chatId, JSON.stringify(msg));
   if(web_app_data?.data) {
     try {
         const data = JSON.parse(web_app_data?.data)
