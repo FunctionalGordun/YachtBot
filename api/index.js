@@ -22,7 +22,7 @@ bot.setMyCommands([
 bot.onText(/\/start/, async (msg) => {
   const chatId = msg.chat.id;
 
-  await bot.sendMessage(chatId, 'Здравствуйте! \n Это бот района Yacht Party', {reply_markup: getMainInlineKeyboard()});
+  await bot.sendMessage(chatId, 'Здравствуй! \n Здесь можно узнать об актуальных событиях и забронировать себе место', {reply_markup: getMainInlineKeyboard()});
 });
 
 bot.onText(/\/admin/, async (msg) => {
